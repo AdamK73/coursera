@@ -3,7 +3,6 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { Helmet } from "react-helmet";
 import "./App.css";
 
-// Import components
 import Nav from "./components/Nav";
 import Homepage from "./components/Homepage";
 import Main from "./Main";
