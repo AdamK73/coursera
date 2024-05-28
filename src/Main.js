@@ -1,15 +1,16 @@
-import React, { useReducer } from "react";
+/* global fetchAPI */
+import React, { useReducer, useEffect } from "react";
 import BookingPage from "./components/BookingPage";
 
 const initializeTimes = () => {
-  return ["17:00", "18:00", "19:00", "20:00", "21:00"];
+  const today = new Date().toISOString().split("T")[0];
+  return fetchAPI(today);
 };
 
 const updateTimes = (state, action) => {
   switch (action.type) {
     case "UPDATE_TIMES":
-      // Placeholder for logic to update times based on the selected date
-      return initializeTimes();
+      return fetchAPI(action.date);
     default:
       return state;
   }
@@ -17,6 +18,11 @@ const updateTimes = (state, action) => {
 
 const Main = () => {
   const [availableTimes, dispatch] = useReducer(updateTimes, initializeTimes());
+
+  useEffect(() => {
+    const today = new Date().toISOString().split("T")[0];
+    dispatch({ type: "UPDATE_TIMES", date: today });
+  }, []);
 
   return (
     <div>
