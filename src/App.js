@@ -1,16 +1,12 @@
 import React from "react";
-import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { Helmet } from "react-helmet";
 import "./App.css";
 
 // Import components
 import Nav from "./components/Nav";
-import CallToAction from "./components/CallToAction";
 import Homepage from "./components/Homepage";
-import BookingPage from "./components/BookingPage";
-import Specials from "./components/Specials";
-import CustomersSay from "./components/CustomersSay";
-import Chicago from "./components/Chicago";
+import Main from "./Main";
 
 function App() {
   return (
@@ -36,7 +32,7 @@ function App() {
         <main>
           <Routes>
             <Route path="/" element={<Homepage />} />
-            <Route path="/booking" element={<BookingPage />} />
+            <Route path="/booking" element={<Main />} />
           </Routes>
         </main>
       </>

@@ -1,10 +1,11 @@
 import React from "react";
+import BookingForm from "./BookingForm";
 
-const BookingPage = () => {
+const BookingPage = ({ availableTimes, dispatch }) => {
   return (
     <div>
       <h1>Book a Table</h1>
-      <p>Use our form to book a table at Little Lemon.</p>
+      <BookingForm availableTimes={availableTimes} dispatch={dispatch} />
     </div>
   );
 };
